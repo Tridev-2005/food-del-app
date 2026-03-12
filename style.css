@@ -1,4 +1,4 @@
-/* Base and Variables */
+
 :root {
     --primary-color: #ff4757;
     --primary-light: #ff6b81;
@@ -59,7 +59,6 @@ a {
     border-radius: 4px;
 }
 
-/* Utilities */
 .flex-center {
     display: flex;
     align-items: center;
@@ -73,7 +72,6 @@ a {
 }
 .hide { display: none !important; }
 
-/* Buttons */
 button {
     font-family: var(--font-heading);
     cursor: pointer;
@@ -137,7 +135,6 @@ button {
     box-shadow: var(--shadow-sm);
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -252,7 +249,6 @@ button {
     cursor: pointer;
 }
 
-/* Sections */
 section {
     padding: 100px 30px;
     max-width: 1300px;
@@ -278,7 +274,6 @@ section {
     color: var(--text-color);
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     align-items: center;
@@ -417,7 +412,6 @@ section {
     100% { transform: translateY(0px); }
 }
 
-/* Categories */
 .category-grid {
     display: flex;
     justify-content: space-between;
@@ -468,7 +462,6 @@ section {
     font-weight: 600;
 }
 
-/* Popular Menu */
 .menu-filters {
     display: flex;
     gap: 15px;
@@ -566,7 +559,6 @@ section {
     margin-top: 50px;
 }
 
-/* App Promo */
 .app-promo {
     background: linear-gradient(135deg, rgba(255,225,229,0.5) 0%, rgba(255,255,255,1) 100%);
     border-radius: var(--border-radius-xl);
@@ -594,7 +586,6 @@ section {
     font-size: 1.1rem;
 }
 
-/* Footer */
 .footer {
     background: #1e272e;
     color: white;
@@ -644,7 +635,6 @@ section {
 }
 .bottom-links { display: flex; gap: 20px; }
 
-/* Cart Sidebar */
 .cart-overlay {
     position: fixed;
     top: 0;
@@ -763,7 +753,6 @@ section {
 .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 500; }
 .summary-row.total { font-weight: 800; font-size: 1.2rem; margin-top: 15px; margin-bottom: 25px; padding-top: 15px; border-top: 2px dashed var(--border-color); }
 
-/* Toast Notifications */
 .toast-container {
     position: fixed;
     bottom: 30px;
@@ -790,7 +779,6 @@ section {
 .toast.show { transform: translateX(0); opacity: 1; }
 .toast i { color: var(--primary-color); font-size: 1.2rem; }
 
-/* Responsive */
 @media (max-width: 992px) {
     .nav-links { display: none; }
     .mobile-toggle { display: block; }
