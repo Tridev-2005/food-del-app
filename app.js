@@ -1,4 +1,4 @@
-// Mock Data
+
 const categories = [
     { id: 1, name: 'Burger', icon: '🍔', filter: 'burger' },
     { id: 2, name: 'Pizza', icon: '🍕', filter: 'pizza' },
@@ -91,11 +91,11 @@ const foodItems = [
     }
 ];
 
-// State
+
 let cart = [];
 let currentFilter = 'all';
 
-// DOM Elements
+
 const categoryGrid = document.getElementById('category-grid');
 const foodGrid = document.getElementById('food-grid');
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -111,7 +111,7 @@ const totalPriceEl = document.getElementById('total-price');
 const toastContainer = document.getElementById('toast-container');
 const navbar = document.querySelector('.navbar');
 
-// Initialize App
+
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderFoodItems(foodItems);
@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
 
-// Setup Event Listeners
+
 function setupEventListeners() {
-    // Scroll event for navbar
+  
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.padding = '10px 30px';
@@ -132,10 +132,10 @@ function setupEventListeners() {
         }
     });
 
-    // Category Filter Buttons
+ 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // Remove active class from all
+          
             filterBtns.forEach(b => b.classList.remove('active'));
             // Add active to clicked
             e.target.classList.add('active');
@@ -145,13 +145,12 @@ function setupEventListeners() {
         });
     });
 
-    // Cart Toggle
     cartBtn.addEventListener('click', toggleCart);
     closeCartBtn.addEventListener('click', toggleCart);
     cartOverlay.addEventListener('click', toggleCart);
 }
 
-// Render Categories
+
 function renderCategories() {
     categoryGrid.innerHTML = '';
     categories.forEach(category => {
@@ -162,14 +161,13 @@ function renderCategories() {
             <h3>${category.name}</h3>
         `;
         div.addEventListener('click', () => {
-            // UI Update
+
             document.querySelectorAll('.category-item').forEach(el => el.classList.remove('active'));
             div.classList.add('active');
             
-            // Logic Update
+         
             filterFoodItems(category.filter);
             
-            // Also update the buttons in popular section
             filterBtns.forEach(btn => {
                 if (btn.getAttribute('data-filter') === category.filter) {
                     btn.classList.add('active');
@@ -182,7 +180,7 @@ function renderCategories() {
     });
 }
 
-// Render Food Items
+
 function renderFoodItems(items) {
     foodGrid.innerHTML = '';
     
@@ -209,7 +207,7 @@ function renderFoodItems(items) {
             </div>
         `;
         
-        // Add to cart event
+       
         const addBtn = card.querySelector('.add-btn');
         addBtn.addEventListener('click', () => addToCart(item));
         
@@ -217,7 +215,7 @@ function renderFoodItems(items) {
     });
 }
 
-// Filter Food Items
+
 function filterFoodItems(filter) {
     currentFilter = filter;
     let filtered = [];
@@ -228,7 +226,7 @@ function filterFoodItems(filter) {
         filtered = foodItems.filter(item => item.category === filter);
     }
     
-    // Add simple animation
+ 
     foodGrid.style.opacity = '0';
     setTimeout(() => {
         renderFoodItems(filtered);
@@ -237,7 +235,7 @@ function filterFoodItems(filter) {
     }, 200);
 }
 
-// Cart Functionality
+
 function toggleCart() {
     cartSidebar.classList.toggle('open');
     cartOverlay.classList.toggle('active');
@@ -261,7 +259,7 @@ function addToCart(item) {
     updateCartUI();
     showToast(`Added ${item.title} to cart`);
     
-    // Animate cart icon
+   
     cartBtn.style.transform = 'scale(1.2)';
     setTimeout(() => {
         cartBtn.style.transform = 'scale(1)';
@@ -290,7 +288,7 @@ function updateQuantity(id, action) {
 }
 
 function updateCartUI() {
-    // Update Badge
+   
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     cartBadge.textContent = totalItems;
     
@@ -302,7 +300,6 @@ function updateCartUI() {
         cartSummary.classList.add('hide');
     }
     
-    // Render Items
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = `
             <div class="empty-cart">
@@ -335,8 +332,7 @@ function updateCartUI() {
                     </div>
                 </div>
             `;
-            
-            // Add listeners for this item
+      
             div.querySelector('.decrease').addEventListener('click', () => updateQuantity(item.id, 'decrease'));
             div.querySelector('.increase').addEventListener('click', () => updateQuantity(item.id, 'increase'));
             div.querySelector('.remove-item').addEventListener('click', () => removeFromCart(item.id));
@@ -344,7 +340,6 @@ function updateCartUI() {
             cartItemsContainer.appendChild(div);
         });
         
-        // Update Totals
         const deliveryFee = 2.00;
         const total = subtotal + deliveryFee;
         
@@ -353,7 +348,7 @@ function updateCartUI() {
     }
 }
 
-// Toast Notification
+
 function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'toast show';
@@ -364,11 +359,11 @@ function showToast(message) {
     
     toastContainer.appendChild(toast);
     
-    // Remove toast after 3 seconds
+  
     setTimeout(() => {
         toast.classList.remove('show');
         setTimeout(() => {
             toast.remove();
-        }, 500); // Wait for transition
+        }, 500); 
     }, 3000);
 }
