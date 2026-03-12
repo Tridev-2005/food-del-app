@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAFE16 - Premium Food Delivery</title>
-    <!-- Google Fonts: Inter -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -37,14 +35,12 @@
                 </div>
                 <button class="btn-primary login-btn">Sign In</button>
             </div>
-            <!-- Mobile Menu Toggle -->
             <div class="mobile-toggle" id="mobile-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
@@ -71,7 +67,6 @@
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <!-- High quality burger image -->
                     <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Delicious Burger" class="main-img">
                     <div class="floating-card rating-card">
@@ -97,7 +92,6 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
     <section class="categories" id="categories">
         <div class="section-header">
             <div>
@@ -107,11 +101,9 @@
         </div>
 
         <div class="category-grid" id="category-grid">
-            <!-- Categories injected by JS -->
         </div>
     </section>
 
-    <!-- Popular Dishes Section -->
     <section class="popular" id="popular">
         <div class="section-header space-between">
             <div>
@@ -127,7 +119,6 @@
         </div>
 
         <div class="food-grid" id="food-grid">
-            <!-- Food items injected by JS -->
         </div>
 
         <div class="view-all-container">
@@ -135,7 +126,6 @@
         </div>
     </section>
 
-    <!-- Mobile App Promo -->
     <section class="app-promo">
         <div class="promo-container">
             <div class="promo-image">
@@ -151,7 +141,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-brand">
@@ -203,17 +192,15 @@
         </div>
     </footer>
 
-    <!-- Cart Sidebar Overlay -->
     <div class="cart-overlay" id="cart-overlay"></div>
 
-    <!-- Cart Sidebar -->
+
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
             <h2>Your Order</h2>
             <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cart-items">
-            <!-- Cart items injected by JS -->
             <div class="empty-cart">
                 <i class="fa-solid fa-basket-shopping text-gray"></i>
                 <p>Your cart is empty</p>
@@ -240,7 +227,6 @@
         </div>
     </div>
 
-    <!-- Toast Notification Container -->
     <div class="toast-container" id="toast-container"></div>
 
     <script src="app.js"></script>
